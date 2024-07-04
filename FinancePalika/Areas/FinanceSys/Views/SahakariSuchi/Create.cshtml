@@ -1,0 +1,114 @@
+﻿@model SahakariSuchiViewModel
+@inject IUtility _Utility
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="createModalLabel">सहकारी सूची</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameNepali" class="control-label"></label>
+                <input asp-for="NameNepali" class="form-control" />
+                <span asp-validation-for="NameNepali" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DartaNo" class="control-label"></label>
+                <input asp-for="DartaNo" class="form-control" />
+                <span asp-validation-for="DartaNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DartaMiti" class="control-label"></label>
+                <input asp-for="DartaMiti" class="form-control" />
+                <span asp-validation-for="DartaMiti" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinanceType" class="control-label"></label>
+                <input asp-for="FinanceType" class="form-control" />
+                <span asp-validation-for="FinanceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PanNo" class="control-label"></label>
+                <input asp-for="PanNo" class="form-control" />
+                <span asp-validation-for="PanNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainTask" class="control-label"></label>
+                <input asp-for="MainTask" class="form-control" />
+                <span asp-validation-for="MainTask" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkArea" class="control-label"></label>
+                <input asp-for="WorkArea" class="form-control" />
+                <span asp-validation-for="WorkArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateId" class="control-label"></label>
+                <select asp-for="StateId" asp-items="@await _Utility.GetStateSelectListItems()" class="form-control">
+                    <option value="">--Please select--</option>
+                </select>
+                <span asp-validation-for="StateId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictId" class="control-label"></label>
+                <select asp-for="DistrictId" asp-items="@await _Utility.GetDistrictSelectListItems()" class="form-control">
+                    <option value="">--Please select--</option>
+                </select>
+                <span asp-validation-for="DistrictId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalLevel" class="control-label"></label>
+                <input asp-for="LocalLevel" class="form-control" />
+                <span asp-validation-for="LocalLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WardNo" class="control-label"></label>
+                <input asp-for="WardNo" class="form-control" />
+                <span asp-validation-for="WardNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToleName" class="control-label"></label>
+                <input asp-for="ToleName" class="form-control" />
+                <span asp-validation-for="ToleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNumber" class="control-label"></label>
+                <input asp-for="MobileNumber" class="form-control" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaxNo" class="control-label"></label>
+                <input asp-for="FaxNo" class="form-control" />
+                <span asp-validation-for="FaxNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+</form>
+
+

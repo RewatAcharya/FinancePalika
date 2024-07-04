@@ -1,0 +1,30 @@
+﻿@model SahakariSuchiViewModel
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form asp-action="DeleteConfirm" enctype="multipart/form-data">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+                सहकारी हटाउनुस
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <div class="text-center justify-content-start">
+                Are you sure? <br />
+                Do you want to Delete
+                <span style="color:red">@Model.Name</span>
+            </div>
+            <input asp-for="Id" hidden />
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">खारेज</button>
+            <input type="submit" value="बुझउनु होस" class="btn btn-danger" />
+        </div>
+    </div>
+</form>
+

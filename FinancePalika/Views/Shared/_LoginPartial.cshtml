@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FinancePalika.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item mx-0 mx-lg-1">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout">
+                <button id="logout" type="submit" class="nav-link btn rounded">SignOut</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-area="Identity" asp-page="/Account/Login">SignIn</a></li>
+    }
+</ul>
